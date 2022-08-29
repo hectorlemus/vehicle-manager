@@ -1,0 +1,24 @@
+<div class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-5">
+  <div class="p-5 xs:p-0 mx-auto md:w-full md:max-w-md">
+    <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
+      <div class="p-10">
+        <h1 class="font-bold text-center text-2xl mb-10">Bienvenido</h1>
+
+        <form [formGroup]="loginForm" (submit)="login()">
+          <label class="font-bold text-sm text-gray-600 pb-1 block">Usuario</label>
+          <input formControlName="username" type="text" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"/>
+
+          <label class="font-bold text-sm text-gray-600 pb-1 block">Contraseña</label>
+          <input formControlName="password" type="password" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"/>
+
+          <button type="submit" class="my-10 transition duration-200 bg-sky-600 hover:bg-sky-700 focus:bg-sky-800 focus:shadow-sm focus:ring-4 focus:ring-sky-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-bold text-center inline-block">
+            <span class="inline-block mr-2">Ingresar</span>
+          </button>
+        </form>
+        <p class="text-center text-red-600 mb-6" *ngIf="hasError">
+          {{ error }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
